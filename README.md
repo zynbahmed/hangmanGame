@@ -25,6 +25,8 @@
 
 ### ***Screenshots***
 
+##### ![Wireframe](https://github.com/zynbahmed/hangmanGame/assets/59283661/c41691b6-bd2d-42c8-9459-fac35eee1cb9)
+
 
 ***
 
