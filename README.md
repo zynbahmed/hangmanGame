@@ -18,7 +18,7 @@
 
 ### ***Getting Started***
 
-##### A Trello board was used to keep track of development progress and can be viewed [here]([https://trello.com/b/Fej04Qoz/hangman-game]).
+##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/Fej04Qoz/hangman-game).
 ##### The project was deployed and can be viewed [here](URL).
 
 ***
