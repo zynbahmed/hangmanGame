@@ -26,6 +26,7 @@
 ### ***Screenshots***
 
 ##### ![Wireframe](https://github.com/zynbahmed/hangmanGame/assets/59283661/c41691b6-bd2d-42c8-9459-fac35eee1cb9)
+##### ![Wireframe](https://github.com/zynbahmed/hangmanGame/assets/59283661/8b800913-6189-43c4-9d89-afee46a8d3af)
 
 
 ***
