@@ -6,3 +6,6 @@ const img = document.querySelector('.hangman img')
 const gameEnds = document.querySelector('.game-ends')
 const reset = gameEnds.querySelector('.reset')
 
+let currentWord, correctLtr, wrongGuesses
+const maxGuesses = 6
+
