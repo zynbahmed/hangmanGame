@@ -27,11 +27,11 @@ const gameStart = (button, letterClicked) => {
         })
     } else {
         wrongGuesses++;
-        //img.src = `images/hangman-${wrongGuessCount}.svg`
+        //img.src = `images/hangman-${wrongGuesses}.svg`
     }
     button.disabled = true
     guessesText.innerText = `${wrongGuesses} / ${maxGuesses}`
-    if(wrongGuessCount === maxGuesses) return gameEnds(false)
+    if(wrongGuesses === maxGuesses) return gameEnds(false)
     if(correctLtr.length === currentWord.length) return gameEnds(true)
 }
 
@@ -44,7 +44,7 @@ const gameEnds = (isVictory) => {
 }
 
 const resetGame = () => {
-    correctLetters = []
+    correctLtr = []
     wrongGuess = 0
     //img.src = "images/hangman-0.svg"
     guessesText.innerText = `${wrongGuess} / ${maxGuesses}`
