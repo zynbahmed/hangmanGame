@@ -36,7 +36,11 @@ const gameStart = (button, letterClicked) => {
 }
 
 const gameEnds = (isVictory) => {
-
+    const vicText = isVictory ? `You got the word:` : 'The correct word was:';
+    gameEndsDiv.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
+    gameEndsDiv.querySelector("h2").innerText = isVictory ? 'You Won!' : 'Game Over!';
+    gameEndsDiv.querySelector("p").innerHTML = `${vicText} <b>${currentWord}</b>`;
+    gameEndsDiv.classList.add("show");
 }
 
 const resetGame = () => {
