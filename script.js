@@ -45,9 +45,9 @@ const gameEnds = (isVictory) => {
 
 const resetGame = () => {
     correctLtr = []
-    wrongGuess = 0
+    wrongGuesses = 0
     //img.src = "images/hangman-0.svg"
-    guessesText.innerText = `${wrongGuess} / ${maxGuesses}`
+    guessesText.innerText = `${wrongGuesses} / ${maxGuesses}`
     wordText.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("")
     kb.querySelectorAll("button").forEach(btn => btn.disabled = false)
     gameEndsDiv.classList.remove("show")
