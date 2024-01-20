@@ -26,7 +26,7 @@ const gameStart = (button, letterClicked) => {
             }
         })
     } else {
-        wrongGuesses++;
+        wrongGuesses++
         //img.src = `images/hangman-${wrongGuesses}.svg`
     }
     button.disabled = true

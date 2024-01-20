@@ -1,22 +1,22 @@
 const wordList = [
     {
-        word:"Elephant",
+        word:"elephant",
         hint:"Largest land mammal with a trunk"
     },
     {
-        word:"Rainbow",
+        word:"rainbow",
         hint:"A colorful arc in the sky often seen after rain"
     },
     {
-        word:"Lighthouse",
+        word:"lighthouse",
         hint:"A tall structure with a light to guide ships at sea"
     },
     {
-        word:"Pillow",
+        word:"pillow",
         hint:"Soft support for your head while sleeping"
     },
     {
-        word:"Turtle",
+        word:"turtle",
         hint:"A slow-moving reptile with a protective shell"
     }
 ]
