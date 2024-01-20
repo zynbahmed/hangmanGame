@@ -31,8 +31,8 @@ const gameStart = (button, letterClicked) => {
     }
     button.disabled = true
     guessesText.innerText = `${wrongGuesses} / ${maxGuesses}`
-    if(wrongGuessCount === maxGuesses) return gameOver(false)
-    if(correctLtr.length === currentWord.length) return gameOver(true)
+    if(wrongGuessCount === maxGuesses) return gameEnds(false)
+    if(correctLtr.length === currentWord.length) return gameEnds(true)
 }
 
 const gameEnds = (isVictory) => {
