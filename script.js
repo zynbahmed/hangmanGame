@@ -27,7 +27,7 @@ const gameStart = (button, letterClicked) => {
         });
     } else {
         wrongGuesses++;
-        //hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`
+        //img.src = `images/hangman-${wrongGuessCount}.svg`
     }
     button.disabled = true
     guessesText.innerText = `${wrongGuesses} / ${maxGuesses}`
@@ -44,6 +44,13 @@ const gameEnds = (isVictory) => {
 }
 
 const resetGame = () => {
+    correctLetters = []
+    wrongGuess = 0
+    //img.src = "images/hangman-0.svg"
+    guessesText.innerText = `${wrongGuess} / ${maxGuesses}`
+    wordText.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("")
+    kb.querySelectorAll("button").forEach(btn => btn.disabled = false)
+    gameEndsDiv.classList.remove("show")
 }
 
 for (let i = 97; i <= 122; i++) {
@@ -54,4 +61,4 @@ for (let i = 97; i <= 122; i++) {
 }
 
 getRandomWord()
-playAgainBtn.addEventListener("click", getRandomWord)
+reset.addEventListener("click", getRandomWord)
