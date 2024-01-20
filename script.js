@@ -13,7 +13,7 @@ const getRandomWord = () => {
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)]
     currentWord = word
     hintText.innerText = hint
-    //resetGame();
+    //resetGame()
 }
 
 const gameStart = (button, letterClicked) => {
@@ -36,22 +36,21 @@ const gameStart = (button, letterClicked) => {
 }
 
 const gameEnds = (isVictory) => {
-    const vicText = isVictory ? `You got the word:` : 'The correct word was:';
-    gameEndsDiv.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
-    gameEndsDiv.querySelector("h2").innerText = isVictory ? 'You Won!' : 'Game Over!';
-    gameEndsDiv.querySelector("p").innerHTML = `${vicText} <b>${currentWord}</b>`;
-    gameEndsDiv.classList.add("show");
+    const vicText = isVictory ? `You got the word:` : 'The correct word was:'
+    gameEndsDiv.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`
+    gameEndsDiv.querySelector("h2").innerText = isVictory ? 'You Won!' : 'Game Over!'
+    gameEndsDiv.querySelector("p").innerHTML = `${vicText} <b>${currentWord}</b>`
+    gameEndsDiv.classList.add("show")
 }
 
 const resetGame = () => {
-
 }
 
 for (let i = 97; i <= 122; i++) {
-    const button = document.createElement("button");
-    button.innerText = String.fromCharCode(i);
-    kb.appendChild(button);
-    button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)));
+    const button = document.createElement("button")
+    button.innerText = String.fromCharCode(i)
+    kb.appendChild(button)
+    button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)))
 }
 
 getRandomWord()
