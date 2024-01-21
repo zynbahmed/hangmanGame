@@ -20,6 +20,8 @@ body {
     justify-content: center;
 }
 
+/* Game Over/You Won window */
+
 .game-ends {
     position: fixed;
     width: 100%;
@@ -36,4 +38,12 @@ body {
 .game-ends.show {
     opacity: 1;
     pointer-events: auto;
+}
+
+.game-ends .content {
+    padding: 15px;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 40px;
+    background: #CDC1D9;
 }
