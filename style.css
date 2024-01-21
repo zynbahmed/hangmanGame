@@ -126,7 +126,7 @@ body {
 /* keyboard */
 
 .game-board .keyboard {
-    gap: 5px;
+    gap: 15px;
     display: flex;
     flex-wrap: wrap;
     margin-top: 15px;
