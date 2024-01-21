@@ -30,4 +30,10 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0 10px;
+    pointer-events: none;
+}
+
+.game-ends.show {
+    opacity: 1;
+    pointer-events: auto;
 }
