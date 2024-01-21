@@ -68,6 +68,8 @@ body {
 
 /* game board  */
 
+/* left side  */
+
 .hangman img {
     max-width: 250px;
 }
@@ -79,3 +81,15 @@ body {
     text-align: left;
     text-transform: uppercase;
 }
+
+/* right side */
+
+/* the word */
+.game-board .word {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
