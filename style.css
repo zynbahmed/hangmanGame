@@ -47,3 +47,17 @@ body {
     border-radius: 40px;
     background: #CDC1D9;
 }
+
+.game-ends h2 {
+    font-size: 1.8rem;
+}
+
+.game-ends p {
+    font-size: 1.15rem;
+    margin: 20px 0 50px;
+    font-weight: 400;
+}
+
+.game-ends p b {
+    color: #513973;
+}
