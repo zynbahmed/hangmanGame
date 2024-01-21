@@ -1,3 +1,5 @@
+/* CSS for all */
+
 body {
     display: flex;
     padding: 0 10px;
@@ -7,3 +9,15 @@ body {
     min-height: 100vh;
     background: #8B63A6
 }
+
+.container {
+    display: flex;
+    width: 850px;
+    padding: 70px 40px;
+    background: #CDC1D9;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
