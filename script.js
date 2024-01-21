@@ -27,7 +27,7 @@ const gameStart = (button, letterClicked) => {
         })
     } else {
         wrongGuesses++
-        //img.src = `images/hangman-${wrongGuesses}.svg`
+        img.src = `images/hangman-${wrongGuesses}.png`
     }
     button.disabled = true
     guessesText.innerText = `${wrongGuesses} / ${maxGuesses}`
@@ -37,7 +37,6 @@ const gameStart = (button, letterClicked) => {
 
 const gameEnds = (isVictory) => {
     const vicText = isVictory ? `You got the word:` : 'The correct word was:'
-    gameEndsDiv.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`
     gameEndsDiv.querySelector("h2").innerText = isVictory ? 'You Won!' : 'Game Over!'
     gameEndsDiv.querySelector("p").innerHTML = `${vicText} <b>${currentWord}</b>`
     gameEndsDiv.classList.add("show")
@@ -46,7 +45,7 @@ const gameEnds = (isVictory) => {
 const resetGame = () => {
     correctLtr = []
     wrongGuesses = 0
-    //img.src = "images/hangman-0.svg"
+    img.src = "images/hangman-0.png"
     guessesText.innerText = `${wrongGuesses} / ${maxGuesses}`
     wordText.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("")
     kb.querySelectorAll("button").forEach(btn => btn.disabled = false)
