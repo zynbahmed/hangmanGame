@@ -61,3 +61,7 @@ body {
 .game-ends p b {
     color: #513973;
 }
+
+.game-ends button {
+    padding: 20px 40px;
+}
