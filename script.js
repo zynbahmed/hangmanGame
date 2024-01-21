@@ -30,7 +30,7 @@ const gameStart = (button, letterClicked) => {
         img.src = `images/hangman-${wrongGuesses}.png`
     }
     button.disabled = true
-    guessesText.innerText = `${wrongGuesses} / ${maxGuesses}`
+    guessesText.innerText = `Incorrect Guesses: ${wrongGuesses} / ${maxGuesses}`
     if(wrongGuesses === maxGuesses) return gameEnds(false)
     if(correctLtr.length === currentWord.length) return gameEnds(true)
 }
@@ -46,7 +46,7 @@ const resetGame = () => {
     correctLtr = []
     wrongGuesses = 0
     img.src = "images/hangman-0.png"
-    guessesText.innerText = `${wrongGuesses} / ${maxGuesses}`
+    guessesText.innerText = `Incorrect Guesses: ${wrongGuesses} / ${maxGuesses}`
     wordText.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("")
     kb.querySelectorAll("button").forEach(btn => btn.disabled = false)
     gameEndsDiv.classList.remove("show")
