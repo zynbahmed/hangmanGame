@@ -4,21 +4,23 @@ const kb = document.querySelector('.keyboard')
 const img = document.querySelector('.hangman img')
 const gameEndsDiv = document.querySelector('.game-ends')
 const reset = gameEndsDiv.querySelector('.reset')
-const timerElement = document.getElementById('timer'); // New element for the timer
+const timer = document.getElementById('timer')
 
 const API_URL = 'https://random-word-api.herokuapp.com/all'
 
 let currentWord, correctLtr, wrongGuesses
 const maxGuesses = 6
 
-const startGameTimer = (durationInSeconds) => {
-    let timeLeft = durationInSeconds;
+let timerInterval
 
-    const timerInterval = setInterval(() => {
-        timerElement.textContent = timeLeft
+const startGameTimer = (durationInSeconds) => {
+    let timeLeft = durationInSeconds
+
+    timerInterval = setInterval(() => {
+        timer.innerText = timeLeft
 
         if (timeLeft === 0) {
-            clearInterval(timerInterval);
+            clearInterval(timerInterval)
             gameEnds(false)
         }
         timeLeft--
@@ -61,6 +63,7 @@ const gameEnds = (isVictory) => {
     gameEndsDiv.querySelector("h2").innerText = isVictory ? 'You Won!' : 'Game Over!'
     gameEndsDiv.querySelector("p").innerHTML = `${vicText} <b>${currentWord}</b>`
     gameEndsDiv.classList.add("show")
+    clearInterval(timerInterval)
 }
 
 const resetGame = () => {
@@ -71,6 +74,7 @@ const resetGame = () => {
     wordText.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("")
     kb.querySelectorAll("button").forEach(btn => btn.disabled = false)
     gameEndsDiv.classList.remove("show")
+    clearInterval(timerInterval)
 }
 
 for (let i = 97; i <= 122; i++) {
