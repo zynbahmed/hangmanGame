@@ -4,11 +4,26 @@ const kb = document.querySelector('.keyboard')
 const img = document.querySelector('.hangman img')
 const gameEndsDiv = document.querySelector('.game-ends')
 const reset = gameEndsDiv.querySelector('.reset')
+const timerElement = document.getElementById('timer'); // New element for the timer
 
 const API_URL = 'https://random-word-api.herokuapp.com/all'
 
 let currentWord, correctLtr, wrongGuesses
 const maxGuesses = 6
+
+const startGameTimer = (durationInSeconds) => {
+    let timeLeft = durationInSeconds;
+
+    const timerInterval = setInterval(() => {
+        timerElement.textContent = timeLeft
+
+        if (timeLeft === 0) {
+            clearInterval(timerInterval);
+            gameEnds(false)
+        }
+        timeLeft--
+    }, 1000)
+}
 
 const getRandomWord = async () => {
     const response = await axios.get(API_URL)
@@ -19,6 +34,7 @@ const getRandomWord = async () => {
 
     currentWord = randomWord
     resetGame()
+    startGameTimer(60)
 }
 
 const gameStart = (button, letterClicked) => {
