@@ -11,21 +11,14 @@ let currentWord, correctLtr, wrongGuesses
 const maxGuesses = 6
 
 const getRandomWord = async () => {
-    const response = await axios.get(API_URL);
-    const words = response.data;
+    const response = await axios.get(API_URL)
+    const words = response.data
 
-    // Assuming the API response is an array of words, you can use it as needed
-    console.log('Words:', words);
-
-    // Rest of your code (populate UI, etc.)
-    const randomIndex = Math.floor(Math.random() * words.length);
-    const randomWord = words[randomIndex];
-
-    // Now you have the random word, and you can use it as needed
-    console.log('Random Word:', randomWord);
+    const randomIndex = Math.floor(Math.random() * words.length)
+    const randomWord = words[randomIndex]
 
     currentWord = randomWord
-    resetGame();
+    resetGame()
 }
 
 const gameStart = (button, letterClicked) => {
