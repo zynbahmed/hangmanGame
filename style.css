@@ -15,8 +15,12 @@ body {
     padding: 70px 40px;
     background: #CDC1D9;
     border-radius: 40px;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+}
+
+.homePage {
+    flex-direction: column;
 }
 
 /* Start button */
@@ -76,15 +80,19 @@ body {
 /* left side  */
 
 .hangman img {
-    max-width: 250px;
+    max-width: 350px;
+    margin-left: 65px;
 }
 
 .hangman h1 {
     font-size: 1.8rem;
     margin-top: 15px;
-    margin-left: 15px;
-    text-align: left;
     text-transform: uppercase;
+}
+
+.level{
+    color:#513973;
+    font-weight: 800;
 }
 
 /* right side */
