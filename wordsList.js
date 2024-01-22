@@ -1,22 +1,50 @@
 const wordList = [
-    {
-        word:"elephant",
-        hint:"Largest land mammal with a trunk"
-    },
-    {
-        word:"rainbow",
-        hint:"A colorful arc in the sky often seen after rain"
-    },
-    {
-        word:"lighthouse",
-        hint:"A tall structure with a light to guide ships at sea"
-    },
-    {
-        word:"pillow",
-        hint:"Soft support for your head while sleeping"
-    },
-    {
-        word:"turtle",
-        hint:"A slow-moving reptile with a protective shell"
-    }
+    { word: "apple", hint: "A red or green fruit with a crisp texture" },
+    { word: "cat", hint: "A small domesticated carnivore known for its purring" },
+    { word: "sunflower", hint: "A tall, yellow-flowered plant that follows the sun" },
+    { word: "book", hint: "A written or printed work consisting of pages" },
+    { word: "tree", hint: "A tall perennial plant with branches and leaves" },
+    { word: "dog", hint: "A loyal domesticated mammal, often kept as a pet" },
+    { word: "happy", hint: "Feeling or showing pleasure and contentment" },
+    { word: "ocean", hint: "A vast body of saltwater covering most of the Earth's surface" },
+    { word: "lamp", hint: "A device for giving light, typically by burning oil or using electricity" },
+    { word: "flower", hint: "The reproductive part of a plant, often colorful and fragrant" },
+    { word: "smile", hint: "A facial expression showing happiness or amusement" },
+    { word: "cloud", hint: "A visible mass of water droplets or ice crystals in the atmosphere" },
+    { word: "shoe", hint: "A covering for the foot, typically made of leather" },
+    { word: "moon", hint: "The natural satellite of the Earth, visible at night" },
+    { word: "cake", hint: "A sweet baked dessert, often with frosting" },
+    { word: "house", hint: "A building for human habitation" },
+    { word: "music", hint: "The art of arranging sounds in a harmonious way" },
+    { word: "key", hint: "A small piece of shaped metal with incisions to fit the wards of a lock" },
+    { word: "rain", hint: "Water falling in drops from the clouds" },
+    { word: "friend", hint: "A person with whom one has a bond of mutual affection" },
+    { word: "bird", hint: "A warm-blooded, feathered vertebrate with wings" },
+    { word: "green", hint: "A color resembling the emerald or grass" },
+    { word: "star", hint: "A fixed luminous point in the night sky" },
+    { word: "pizza", hint: "A savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough" },
+    { word: "river", hint: "A large natural stream of water flowing in a channel to the sea, a lake, or another river" },
+    { word: "bear", hint: "A large, heavy mammal with thick fur and a short tail" },
+    { word: "pen", hint: "An instrument for writing or drawing with ink" },
+    { word: "sun", hint: "The star around which the Earth orbits, providing light and heat" },
+    { word: "house", hint: "A building for human habitation" },
+    { word: "car", hint: "A road vehicle, typically with four wheels, powered by an internal combustion engine" },
+    { word: "fish", hint: "A limbless cold-blooded vertebrate animal with gills and fins" },
+    { word: "guitar", hint: "A stringed musical instrument with a fretted fingerboard" },
+    { word: "hat", hint: "A shaped covering for the head" },
+    { word: "snow", hint: "Atmospheric water vapor frozen into ice crystals and falling in light white flakes" },
+    { word: "chair", hint: "A separate seat for one person, typically with a back and four legs" },
+    { word: "horse", hint: "A large mammal used for riding, racing, or as a work animal" },
+    { word: "cookie", hint: "A sweet baked food typically small, flat, and round" },
+    { word: "beach", hint: "A pebbly or sandy shore, especially by the ocean" },
+    { word: "clock", hint: "A mechanical or electrical device for measuring time" },
+    { word: "map", hint: "A diagrammatic representation of an area" },
+    { word: "fire", hint: "The state of burning, producing light and heat" },
+    { word: "moon", hint: "The natural satellite of the Earth, visible at night" },
+    { word: "chair", hint: "A separate seat for one person, typically with a back and four legs" },
+    { word: "game", hint: "An activity engaged in for amusement or competition" },
+    { word: "hat", hint: "A shaped covering for the head" },
+    { word: "cake", hint: "A sweet baked dessert, often with frosting" },
+    { word: "cloud", hint: "A visible mass of water droplets or ice crystals in the atmosphere" },
+    { word: "star", hint: "A fixed luminous point in the night sky" },
 ]

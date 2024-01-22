@@ -11,7 +11,7 @@ body {
 }
 .container {
     display: flex;
-    width: 850px;
+    width: 1050px;
     padding: 70px 40px;
     background: #CDC1D9;
     border-radius: 40px;
@@ -19,14 +19,29 @@ body {
     justify-content: center;
 }
 
+/* Home Page */
+
 .homePage {
     flex-direction: column;
+}
+
+.homePage h1 {
+    font-size: 2.5rem;
+}
+
+.homePage p {
+    font-size: 20px;
+}
+
+.homePage p b {
+    color:#513973
 }
 
 /* Start button */
 
 .startBtn button {
     padding: 20px 40px;
+    margin: 30px 20px;
 }
 
 /* Game Over/You Won window */
