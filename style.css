@@ -119,6 +119,17 @@ body {
     align-items: center;
 }
 
+.game-board .timer{
+    font-size: 24px;
+    margin-bottom: 80px;
+}
+
+.game-board #timer{
+    font-weight: bold;
+    font-size: 30px;
+    color:#513973
+}
+
 .game-board .word {
     gap: 15px;
     list-style: none;
