@@ -1,4 +1,4 @@
-const wordText = document.querySelector('.word')
+wordText = document.querySelector('.word')
 const guessesText = document.querySelector('.guesses')
 const kb = document.querySelector('.keyboard')
 const img = document.querySelector('.hangman img')
@@ -10,6 +10,8 @@ const API_URL = 'https://random-word-api.herokuapp.com/all'
 
 let currentWord, correctLtr, wrongGuesses
 const maxGuesses = 6
+
+let score = 0
 
 let timerInterval
 
@@ -41,6 +43,18 @@ const getRandomWord = async () => {
     startGameTimer(60)
 }
 
+const getResetRandomWorld = async () => {
+    const response = await axios.get(API_URL)
+    const words = response.data
+
+    const randomIndex = Math.floor(Math.random() * words.length)
+    const randomWord = words[randomIndex]
+
+    console.log(randomWord)
+
+    currentWord = randomWord
+}
+
 const gameStart = (button, letterClicked) => {
     if(currentWord.includes(letterClicked)) {
         [...currentWord].forEach((letter, index) => {
@@ -57,15 +71,23 @@ const gameStart = (button, letterClicked) => {
     button.disabled = true
     guessesText.innerText = `Incorrect Guesses: ${wrongGuesses} / ${maxGuesses}`
     if(wrongGuesses === maxGuesses) return gameEnds(false)
-    if(correctLtr.length === currentWord.length) return gameEnds(true)
+    if(correctLtr.length === currentWord.length) return scoreReset()
 }
 
 const gameEnds = (isVictory) => {
     const vicText = isVictory ? `You got the word:` : 'The correct word was:'
     gameEndsDiv.querySelector("h2").innerText = isVictory ? 'You Won!' : 'Game Over!'
+
+    if (isVictory) {
+        score++
+        scoreReset()
+    }
+
     gameEndsDiv.querySelector("p").innerHTML = `${vicText} <b>${currentWord}</b>`
     gameEndsDiv.classList.add("show")
     clearInterval(timerInterval)
+
+    document.querySelector('.score').innerText = `Score: ${score}`
 }
 
 const resetGame = () => {
@@ -90,6 +112,29 @@ const resetGame = () => {
     clearInterval(timerInterval)
 }
 
+const scoreReset = async () => {
+    await getResetRandomWorld()
+    score++
+    kb.innerHTML = ""
+    correctLtr = []
+    wrongGuesses = wrongGuesses
+    img.src = `images/hangman-${wrongGuesses}.png`
+    guessesText.innerText = `Incorrect Guesses: ${wrongGuesses} / ${maxGuesses}`
+    wordText.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("")
+    kb.querySelectorAll("button").forEach(btn => btn.disabled = false)
+
+    const letters = Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i))
+    shuffleKeyboard(letters)
+    for (const letter of letters) {
+        const button = document.createElement("button")
+        button.innerText = letter
+        kb.appendChild(button)
+        button.addEventListener("click", (e) => gameStart(e.target, letter))
+    }
+
+    gameEndsDiv.classList.remove("show")
+}
+
 const shuffleKeyboard = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -98,4 +143,4 @@ const shuffleKeyboard = (array) => {
 }
 
 getRandomWord()
-reset.addEventListener("click", getRandomWord)
+reset.addEventListener("click", getRandomWord) 
