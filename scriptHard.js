@@ -27,19 +27,14 @@ const startGameTimer = (durationInSeconds) => {
     }, 1000)
 }
 
-const shuffleKeyboard = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
 const getRandomWord = async () => {
     const response = await axios.get(API_URL)
     const words = response.data
 
     const randomIndex = Math.floor(Math.random() * words.length)
     const randomWord = words[randomIndex]
+
+    console.log(randomWord)
 
     currentWord = randomWord
     resetGame()
@@ -93,6 +88,13 @@ const resetGame = () => {
 
     gameEndsDiv.classList.remove("show")
     clearInterval(timerInterval)
+}
+
+const shuffleKeyboard = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }
 
 getRandomWord()
