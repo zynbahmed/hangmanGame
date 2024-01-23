@@ -27,6 +27,13 @@ const startGameTimer = (durationInSeconds) => {
     }, 1000)
 }
 
+const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 const getRandomWord = async () => {
     const response = await axios.get(API_URL)
     const words = response.data
@@ -67,21 +74,25 @@ const gameEnds = (isVictory) => {
 }
 
 const resetGame = () => {
+    kb.innerHTML = ""
     correctLtr = []
     wrongGuesses = 0
     img.src = "images/hangman-0.png"
     guessesText.innerText = `Incorrect Guesses: ${wrongGuesses} / ${maxGuesses}`
     wordText.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("")
     kb.querySelectorAll("button").forEach(btn => btn.disabled = false)
+
+    const letters = Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i))
+    shuffleArray(letters)
+    for (const letter of letters) {
+        const button = document.createElement("button")
+        button.innerText = letter
+        kb.appendChild(button)
+        button.addEventListener("click", (e) => gameStart(e.target, letter))
+    }
+
     gameEndsDiv.classList.remove("show")
     clearInterval(timerInterval)
-}
-
-for (let i = 97; i <= 122; i++) {
-    const button = document.createElement("button")
-    button.innerText = String.fromCharCode(i)
-    kb.appendChild(button)
-    button.addEventListener("click", (e) => gameStart(e.target, String.fromCharCode(i)))
 }
 
 getRandomWord()
