@@ -77,17 +77,11 @@ const gameStart = (button, letterClicked) => {
 const gameEnds = (isVictory) => {
     const vicText = isVictory ? `You got the word:` : 'The correct word was:'
     gameEndsDiv.querySelector("h2").innerText = isVictory ? 'You Won!' : 'Game Over!'
-
-    if (isVictory) {
-        score++
-        scoreReset()
-    }
-
     gameEndsDiv.querySelector("p").innerHTML = `${vicText} <b>${currentWord}</b>`
     gameEndsDiv.classList.add("show")
     clearInterval(timerInterval)
-
     document.querySelector('.score').innerText = `Score: ${score}`
+    score = 0
 }
 
 const resetGame = () => {

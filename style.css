@@ -88,11 +88,6 @@ body {
     font-size: 1.4rem;
 }
 
-.score b {
-    color: #513973;
-    font-size: 1.4rem;
-}
-
 .game-ends button {
     padding: 20px 40px;
 }
