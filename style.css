@@ -85,6 +85,12 @@ body {
 
 .game-ends p b {
     color: #513973;
+    font-size: 1.4rem;
+}
+
+.score b {
+    color: #513973;
+    font-size: 1.4rem;
 }
 
 .game-ends button {
