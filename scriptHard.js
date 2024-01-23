@@ -27,7 +27,7 @@ const startGameTimer = (durationInSeconds) => {
     }, 1000)
 }
 
-const shuffleArray = (array) => {
+const shuffleKeyboard = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -83,7 +83,7 @@ const resetGame = () => {
     kb.querySelectorAll("button").forEach(btn => btn.disabled = false)
 
     const letters = Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i))
-    shuffleArray(letters)
+    shuffleKeyboard(letters)
     for (const letter of letters) {
         const button = document.createElement("button")
         button.innerText = letter
