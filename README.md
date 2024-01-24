@@ -1,6 +1,7 @@
 # Hangman Game
 ## Date: 24/1/2024
 ### By: Zainab Ahmed
+#### [GitHub](https://github.com/zynbahmed) | [LinkedIn](https://www.linkedin.com/in/zainab-ahmed-795840278/)
 
 ***
 
