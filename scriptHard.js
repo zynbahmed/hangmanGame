@@ -36,8 +36,6 @@ const getRandomWord = async () => {
     const randomIndex = Math.floor(Math.random() * words.length)
     const randomWord = words[randomIndex]
 
-    console.log(randomWord)
-
     currentWord = randomWord
     resetGame()
     startGameTimer(60)
@@ -49,8 +47,6 @@ const getResetRandomWorld = async () => {
 
     const randomIndex = Math.floor(Math.random() * words.length)
     const randomWord = words[randomIndex]
-
-    console.log(randomWord)
 
     currentWord = randomWord
 }
