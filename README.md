@@ -20,11 +20,13 @@
 
 ### ***Technologies Used***
 * HTML
-    * To create the Elements of the game. 
+    * Generate the components of the game. 
 * CSS
-    * To style the elements of the game.
+    * Design and format the components of the game.
 * Javascript
-    * The functionality of the game.
+    * Implementing the functionality of the game.
+* Surge
+    * Deploy the game 
 
 ***
 
@@ -49,16 +51,12 @@
 ##### Game Screenshots
 ###### Home Page
 ![Home Page](https://github.com/zynbahmed/hangmanGame/assets/59283661/74314076-b2c0-41bb-bbf8-90143e714fd2)
-
 ###### Easy Level Page
 ![Easy Level Page](https://github.com/zynbahmed/hangmanGame/assets/59283661/10f7feae-b056-4208-8f79-5b9584b16f40)
-
 ###### Meduim Level Page
 ![Medium Level Page](https://github.com/zynbahmed/hangmanGame/assets/59283661/bcafba79-f6a4-46ed-818c-a6fdc1b9d3e1)
-
 ###### Hard Level Page
 ![Hard Level Page](https://github.com/zynbahmed/hangmanGame/assets/59283661/82af5222-8f23-4182-8144-225fdf8b96a8)
-
 ###### Game Over/You Won Window
 ![You Won Window](https://github.com/zynbahmed/hangmanGame/assets/59283661/c28346d3-e4e2-47b3-9eaf-f1135717e278)
 ![Game Over Window](https://github.com/zynbahmed/hangmanGame/assets/59283661/0cab192f-e8a2-4bd2-88f4-fb7a21bee8db)
